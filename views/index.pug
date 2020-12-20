@@ -1,0 +1,574 @@
+doctype html
+<html>
+    <head>
+        
+        title Avadann IAS Academy
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" href="../first.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        style(type="text/css").
+            table,th,td
+            {
+                border: 2px solid black;
+                margin-left: 13vw; 
+                margin-bottom: 5vh;
+            }
+            
+            #home
+            {
+                margin-left: 6vw;
+                color: white;
+            }
+            
+            #myBtn:hover,#home:hover,#b:hover,#butt:hover,.cls:hover,.c:hover
+            {
+                color: #21075c;
+            }
+            
+            #myBtn,#b,#butt
+            {
+                border-style: none;
+                background-color: transparent;
+                color: white;
+                margin-left: 4vw;
+                outline: 0!important;
+            }
+            
+            #sub,#sb,#submit
+            {
+                width: 100px;
+                border-radius: 2vh;
+                border-style: groove;
+                font-style: italic;
+            }
+            
+            .btn
+            {
+                color:blue;
+            }
+            
+            *:focus
+            {
+                outline:none!important;
+            }
+           
+    </head> 
+    
+    <body>
+        
+        <div class="background">
+            
+            <a id="home" style="padding-right: 0 vw!important" href="/"><strong><i class="fa fa-home" style="font-size:4.5vh"></i></strong></a>
+            <button id="myBtn"><strong>AddUpdate</strong></button>
+            <div id="myModal" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Add Update</strong></h2>
+                        </div>
+                        <span class="close">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form1">
+                                <textarea type="text" placeholder="Write your update" id="text" name="text"></textarea><br>
+                                <label for="link" style="margin-top:1vw;margin-bottom:-1.5vw">AddLink</label><br>
+                                <input id="link" type="text" placeholder="Type Link if exists" name="link" value="No_Link"><br>
+                                <input id="submit" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <button id="b"><strong>UpdateAdmin</strong></button>
+            <div id="m" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Update Admin Information</strong></h2>
+                        </div>
+                        <span class="c">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form2">
+                                <label for="name" style="margin-right:7.2vw">Name</label>
+                                <input type="text" placeholder="Name" id="name" name="name"><br>
+                                 <label for="password" style="margin-right:5.4vw">Password</label>
+                                <input type="password" placeholder="password" id="password" name="password"><br>
+                                 <label for="confirmPassword" style="margin-right:1vw">Confirm Password</label>
+                                <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword"><br>
+                                <input id="sub" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <button id="butt"><strong>AddQuestion</strong></button>
+            <div id="myMod" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Add Question</strong></h2>
+                        </div>
+                        <span class="cls">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form3">
+                                <label for="question" style="margin-right:1.5vw">Question</label>
+                                <input type="text" placeholder="Question" id="question" name="question"><br>
+                                <label for="A" style="margin-right:5.4vw">A</label>
+                                <input type="text" placeholder="Option A" id="A" name="A"><br>
+                                 <label for="B" style="margin-right:5.4vw">B</label>
+                                <input type="text" placeholder="Option B" id="B" name="B"><br>
+                                 <label for="C" style="margin-right:5.4vw">C</label>
+                                <input type="text" placeholder="Option C" id="C" name="C"><br>
+                                 <label for="D" style="margin-right:5.4vw">D</label>
+                                <input type="text" placeholder="Option D" id="D" name="D"><br>
+                                <label for="correctOption" style="margin-right:-1.5vw">Correct Option</label>
+                                <input type="text" placeholder="Type A,B,C or D" id="correctOption" name="correctOption"><br>
+                                <input id="sb" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="container name text-center" style="margin-top: -8.3vh">
+                <strong><y>Avadànn</y></strong><br>
+                <div style= "margin-top:-4vh;margin-left: 12vw;">
+                    <y2 style= "font-size: 2.1vh">Road to Success</y2>
+                </div>
+                <strong><y1>(Premier IAS/PCS Institute)</y1></strong><br><br>
+                <strong><y1>104,EC Road.(Top Floor) Dehradun (U.K.)248001</y1></strong><br>
+                <strong><y1>Mob.: +91-9456360555</y1></strong>
+            </div>
+                
+        </div>
+        
+        <div class="text-center">
+        
+            <div id="std_details">
+            
+                <h1 style="">Students Details</h1>
+                <br>
+                <div style="overflow-x:auto">
+                    - var s=1;
+                    - var t=0;
+                    - var arr=[];
+                    table
+                        <col width="30vw" height="1vh">
+                        <col width="200vw"  >
+                        <col width="200vw" >
+                        <col width="200vw" >
+                        <col width="200vw" >
+                        <col width="100vw" >
+                        <col width="10vw" >
+                    
+                        tr
+                            th S.No
+                            th Date
+                            th Name
+                            th Email
+                            th Contact No.
+                            th Time
+                            th 
+                        each r in variable
+                            - var date= r.date.toString().indexOf(':');
+                            - var time= r.date.toString().indexOf('G');
+                            tr
+                                td=s++
+                                td=r.date.toString().substring(0,(date-2))
+                                td=r.name 
+                                td=r.email 
+                                td=r.phone 
+                                td=r.date.toString().substring((date-2),time)    
+                                td(style="border:none") 
+                                    form(id="form_del"+t)
+                                        <button type="submit" class="btn">
+                                            i(id="delete"+(t++) class="fa fa-trash-o" style="font-size: 25px")
+                                        </button>
+                            - arr.push(r);
+                </div>     
+            </div>
+                
+            <div id="updating">
+            
+                <h1 style="">Updates</h1>
+                <br>
+                <div style="overflow-x:auto">
+                    - var s=1;
+                    - var t=0;
+                    - var updts=[];
+                    table(style="margin-left:20vw")
+                        <col width="30vw" height="1vh">
+                        <col width="200vw"  >
+                        <col width="500vw" >
+                        <col width="10vw" >
+                        
+                        tr
+                            th S.No
+                            th Date
+                            th Updates
+                            th 
+                        each r in updates
+                            - date= r.date.toString().indexOf(':');
+                            tr
+                                td=s++
+                                td=r.date.toString().substring(0,(date-2))
+                                if(r.link=="No_Link")
+                                    td(style="font-weight: bold")=r.text
+                                else
+                                    td(style="font-weight: bold")
+                                        a(href=r.link style="color:red" target="_blank")=r.text
+                                td(style="border:none") 
+                                    form(id="form_updates"+t)
+                                        <button type="submit" class="btn" style="outline=0">
+                                            i(id="up"+(t++) class="fa fa-trash-o" style="font-size: 25px")
+                                        </button>
+                            - updts.push(r);
+                </div>
+            </div> 
+            
+            <div id="quizzed">
+            
+                <h1 style="">Questions</h1>
+                <br>
+                <div style="overflow-x:auto">
+                    - var s=1;
+                    - var t=0;
+                    table(style="margin-left:25vw")
+                        <col width="100vw" height="1vh">
+                        <col width="500vw">
+                        <col width="10vw" >
+                        
+                        tr
+                            th S.No
+                            th Questions
+                            th 
+                        each r in quizzes
+                            tr
+                                td=s++
+                                td(style="font-weight: bold")=r.question
+                                td(style="border:none") 
+                                    form(id="form_quizzes"+t)
+                                        <button type="submit" class="btn">
+                                            i(id="quiz"+(t++) class="fa fa-trash-o" style="font-size: 25px;outline=0")
+                                        </button>
+                            - updts.push(r);
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    
+    <footer>
+                
+        <div class="jumbotron">
+                
+            <div class="container-fluid text-center">
+                <div class="row">
+                        
+                    <div class="column col-sm-3">
+                        <h3 style="color: #5ae503"><strong>Links</strong></h3>
+                        <br>
+                        <a href="https://upsc.gov.in/" target="_blank" style="color: black"><h6>UPSC</h6></a>
+                        <a href="http://ukpsc.gov.in/" target="_blank" style="color: black"><h6>UKPSC</h6></a>
+                        <a href="http://uppsc.up.nic.in/" target="_blank" style="color: black"><h6>UPPSC</h6></a>
+                        <h6>Terms and Conditions</h6>
+                    </div>
+                        
+                    <div class="column col-sm-5">
+                        <h3 style="color: #5ae503"><strong>Business Hours</strong></h3>
+                        <br>
+                        <h5>Mon-Fri:    10:00 AM – 7:30 PM</h5>
+                        <h5>Sat,Sun:	Closed</h5>
+                        <br>
+                        <h5 style="color: #7c8174"><strong>Website developer- <a href="https://www.instagram.com/bhandariarjit/" target="_blank" style="color: #7c8174;margin-left:-.2vw;">Arjit Bhandari</a></strong></h5>
+                        <h5 style="color: #7c8174"><strong>For any queries about website,drop a message on</strong></h5>
+                        <a href="https://wa.me/919456300762" target="_blank"><i class="fa fa-whatsapp" style="font-size:24px;background-color: #5fce19;color:white;border-radius:1vw"></i></a>
+                    </div>
+                        
+                    <div class="column col-sm-4">
+                        <h3 style="color: #5ae503"><strong>Avadànn Academy</strong></h3>
+                        <br><br>
+                        <h6 style="font-size:11px">&copy 2019...All Rights Reserved</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            script(type="text/javascript").
+                var modal = document.getElementById("myModal");
+                var m = document.getElementById("m");
+                var myMod= document.getElementById("myMod");
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                var b = document.getElementById("b");
+                var butt = document.getElementById("butt");
+                // Get the <span> element that closes the modal
+                var close = document.getElementsByClassName("close")[0];
+                var s = document.getElementsByClassName("c")[0];
+                var cls = document.getElementsByClassName("cls")[0];
+                // When the user clicks the button, open the modal 
+                btn.onclick = function(){
+                    modal.style.opacity = 1;
+                    modal.style.display = "block";
+                }
+
+                b.onclick = function(){
+                    m.style.opacity = 1;
+                    m.style.display = "block";
+                }
+                
+                butt.onclick = function(){
+                    myMod.style.opacity = 1;
+                    myMod.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                close.onclick = function() 
+                {
+                    modal.style.opacity = 0;
+                    modal.style.display = "none";
+                }
+                
+                s.onclick = function() 
+                {
+                    m.style.opacity = 0;
+                    m.style.display = "none";
+                }
+                
+                cls.onclick = function() 
+                {
+                    myMod.style.opacity = 0;
+                    myMod.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.opacity = 0;
+                        modal.style.display = "none";
+                    }
+                    
+                    if (event.target == m) {
+                        m.style.opacity = 0;
+                        m.style.display = "none";
+                    }
+                    
+                    if (event.target == myMod) {
+                        myMod.style.opacity = 0;
+                        myMod.style.display = "none";
+                    }
+                }
+                
+                /*ajax*/
+                
+                $(document).ready(()=>{
+                    $("#form1").submit( (e)=>{
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/update',
+                            data :{
+                                text: $('#text').val(),
+                                link: $('#link').val()
+                                },
+            
+                            method: "POST",
+                            success : function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                });
+                
+                $(document).ready(()=>{
+                    $("#form2").submit( (e)=>{
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/admin',
+                            data :{
+                                name: $('#name').val(),
+                                password: $('#password').val(),
+                                confirmPassword: $('#confirmPassword').val()
+                                },
+            
+                            method: "PUT",
+                            success : function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                });
+                
+                $(document).ready(()=>{
+                    $("#form3").submit( (e)=>{
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/quiz/add',
+                            data :{
+                                question: $('#question').val(),
+                                A: $('#A').val(),
+                                B: $('#B').val(),
+                                C: $('#C').val(),
+                                D: $('#D').val(),
+                                correctOption: $("#correctOption").val()
+                                },
+            
+                            method: "POST",
+                            success : function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                });
+                
+                
+                //Student Details
+                
+                var ar=!{JSON.stringify(arr)};
+        
+                $(document).ready(()=>{
+                    for(var x=0;x<ar.length;x++)
+                        ajax(x);
+                });
+                
+                function ajax(x)
+                {  
+                    $("#form_del"+x).submit( (e)=>{
+                        console.log("he");
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/admin',
+                            data :{
+                                id: ar[x]._id
+                                },
+                            method: "DELETE",
+                            success: function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                }
+                
+                /*******************/
+                
+                //Updates
+                
+                var up_ar=!{JSON.stringify(updts)};
+
+                $(document).ready(()=>{
+                    for(var x=0;x<up_ar.length;x++)
+                        ajax2(x);
+                });
+                
+                function ajax2(x)
+                {  
+                    $("#form_updates"+x).submit( (e)=>{
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/update',
+                            data :{
+                                id: up_ar[x]._id
+                                },
+                            method: "DELETE",
+                            success: function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                }
+                
+                /*******************/
+                
+                //Quizzes
+                
+                var qz=!{JSON.stringify(quizzes)};
+                console.log(qz);
+
+                $(document).ready(()=>{
+                    for(var x=0;x<qz.length;x++)
+                        ajax3(x);
+                });
+                
+                function ajax3(x)
+                {  
+                    $("#form_quizzes"+x).submit( (e)=>{
+                        e.preventDefault();
+                        $.ajax({
+                            url: '/quiz',
+                            data :{
+                                id: qz[x]._id
+                                },
+                            method: "DELETE",
+                            success: function(data){
+                                window.location.replace(data.link);
+                                alert(data.message);
+                            },
+                            error:function(err){
+                                alert(JSON.stringify(err.responseText));
+                            }
+                        }); 
+                    });
+                }
+        </footer>
+    </html>

@@ -1,0 +1,163 @@
+<!DOCTTYPE html>
+<html>
+    <head>
+        
+        <title>
+            Avadann Academy
+        </title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" href="first.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <style>
+            input
+            {
+                width: 150px;
+                border-color: #21075c;
+                margin-bottom: 5vh;
+            }
+            
+            button
+            {
+                border-color: #21075c;
+                margin-bottom: 5vh;  
+            }
+            
+            a
+            {
+                margin-left: 6vw;
+                color: white;
+            }
+            
+            #mybtn:hover,a:hover
+            {
+                color: #21075c;
+            }
+            
+            #myBtn
+            {
+                border-style: none;
+                background-color: transparent;
+                color: white;
+                margin-left: 5vw;
+                outline: 0;
+            }
+            
+        </style>
+        
+    </head> 
+    
+    <body>
+        
+        <div class="background">
+            
+            <a id="home" href="./"><strong><i class="fa fa-home" style="font-size:4.5vh"></i></strong></a>
+            
+            <div class="container name text-center" style="margin-top: -4.3vh;">
+                <strong><y>Avadànn</y></strong><br>
+                <div style= "margin-top:-4vh;margin-left: 12vw;">
+                    <y2 style= "font-size: 2.1vh">Road to Success</y2>
+                </div>
+                <strong><y1>(Premier IAS/PCS Institute)</y1></strong><br><br>
+                <strong><y1>104,EC Road.(Top Floor) Dehradun (U.K.)248001</y1></strong><br>
+                <strong><y1>Mob.: +91-9456360555</y1></strong>
+            </div>
+            
+        </div>
+        <div class="container text-center">
+            <h1 style="color:#21075c;margin-top: 8vh;margin-bottom: 6vh">Login as Administrator</h1>
+            <form id="form3">
+                <div class="row">
+                    <div class="col-5 text-right">
+                        <label for="name">name</label>
+                    </div>
+                    <div class="col-sm-2 ">
+                        <input id="name" type="text" name="name" >
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-5 text-right">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="password" id="password" name="password">
+                    </div>
+                </div>
+                
+                <button type="submit">Log in</button>
+            </form>  
+        </div>
+        
+    </body>
+    
+    <footer>
+            
+        <div class="jumbotron">
+                
+            <div class="container-fluid text-center">
+                <div class="row">
+                        
+                    <div class="column col-sm-3">
+                        <h3 style="color: #5ae503"><strong>Links</strong></h3>
+                        <br>
+                        <a href="https://upsc.gov.in/" target="_blank" style="color: black"><h6>UPSC</h6></a>
+                        <a href="http://ukpsc.gov.in/" target="_blank" style="color: black"><h6>UKPSC</h6></a>
+                        <a href="http://uppsc.up.nic.in/" target="_blank" style="color: black"><h6>UPPSC</h6></a>
+                        <h6>Terms and Conditions</h6>
+                    </div>
+                        
+                    <div class="column col-sm-5">
+                        <h3 style="color: #5ae503"><strong>Business Hours</strong></h3>
+                        <br>
+                        <h5>Mon-Fri:    10:00 AM – 7:30 PM</h5>
+                        <h5>Sat,Sun:	Closed</h5>
+                        <br>
+                        <h5 style="color: #7c8174"><strong>Website developer- <a href="https://www.instagram.com/bhandariarjit/" target="_blank" style="color: #7c8174;margin-left:-.2vw;">Arjit Bhandari</a></strong></h5>
+                        <h5 style="color: #7c8174"><strong>For any queries about website,drop a message on</strong></h5>
+                        <a href="https://wa.me/919456300762" target="_blank"><i class="fa fa-whatsapp" style="font-size:24px;background-color: #5fce19;color:white;border-radius:1vw"></i></a>
+                    </div>
+                        
+                    <div class="column col-sm-4">
+                        <h3 style="color: #5ae503"><strong>Avadànn Academy</strong></h3>
+                        <br><br>
+                        <h6 style="font-size:11px">&copy 2019...All Rights Reserved</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./first.js"></script>
+        <script>
+        
+            $(document).ready(()=>{
+                $("#form3").submit( (e) =>{
+                    e.preventDefault();
+                    $.ajax({
+                        url: '/admin',
+                        data :{
+                            name: $('#name').val(),
+                            password: $('#password').val()
+                            },
+                        dataType: 'json',
+                        method: "POST",
+                        success : function(data){
+                            window.location.replace(data.link);
+                            alert(data.message);
+                        },
+                        error:function(err){
+                        alert(JSON.stringify(err.responseText));
+                        }
+                    }); 
+                });
+            });
+        
+        </script>
+        </footer>
+</html>

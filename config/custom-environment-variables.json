@@ -1,0 +1,6 @@
+{
+    "db":"avadaan_db",
+    "ID":"ID",
+    "jwt": "jwt"
+}
+//mongodb://avadaan:Arjit222830@ds133438.mlab.com:33438/heroku_lb8wnh5h

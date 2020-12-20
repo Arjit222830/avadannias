@@ -1,0 +1,375 @@
+@-ms-viewport{
+    width: device-width;
+    height: device-height;
+}
+
+@font-face {
+font-family: 'Bradley Hand Negrita';
+font-style: normal;
+font-weight: normal;
+src: local('Bradley Hand Negrita'), url('BradleyHandITCTT-Bold.woff') format('woff');
+}
+
+.name
+{
+    padding-top: 5vh;
+    z-index: -1;
+}
+
+#direction
+{
+    position: relative;
+}
+
+.background
+{
+    background-image:  url('./images/background.jpg');
+    background-size: cover,contain;
+    height: 50vh !important;
+    margin-bottom: 2vh;
+}
+
+h5
+{
+    font-size: 2.3vh!important;
+}
+
+.images
+{
+    height: 40vh;
+    width: 40vw;
+}
+
+#move
+{
+    width: 15vw;
+    height: auto;
+}
+
+#up
+{
+    height: 42vh;
+}
+
+.column
+{
+    margin-bottom: 2vh;
+}
+
+y
+{
+    font-family:'Bradley Hand Negrita'; 
+    font-size: 10vh !important;
+    color: #21075c;
+}
+
+y1
+{
+    font-size: 3.1vh !important;
+    color: #21075c;
+}
+
+.gap
+{
+    margin-left: 4vw;
+}
+
+.checked
+{
+    color: orange;
+}
+
+#google-reviews
+{
+    color:#21075c;
+    background-color: #24ad1f !important;
+    border-color: none;
+    width: 15px;
+    border-radius: 30px;
+}
+
+#google-reviews:hover
+{
+    color: #21075c;
+}
+
+#google-reviews:focus
+{
+    outline: none;
+}
+
+#floating
+{
+    width: auto;
+    height: 35vh;
+    margin-right: 2vw;
+    margin-bottom: 0.1vw;
+}
+
+.images
+{
+    margin-bottom:3vh;
+}
+
+#messenger
+{
+    height: 23px;
+    margin-top: -1.5vh;
+}
+
+.faculty
+{
+    width: auto;
+    height: 30vh;
+}
+
+.jumbotron
+{
+    margin-bottom:0!important;
+}
+
+#tick
+{
+    color: green;
+    font-size: 36px;
+}
+
+#cross
+{
+    color: red;
+    font-size: 36px;
+}
+/*dropdown*/
+
+#home
+{
+    padding-right: 6vw;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: transparent;
+    padding-bottom: 3vh;
+    padding-left: 6vw;
+    padding-right: 18vw;
+    position: fixed;
+    z-index:2;
+}
+
+#navbar a {
+    float: left;
+    font-size: 1.3vw;
+    color: white;
+    margin-right:4vw;
+    text-decoration: none;
+}
+
+#navbar .dropdown {
+    float: left;
+    overflow: hidden;
+    font-size: 1.3vw;
+}
+
+#navbar a:hover, .dropdown:hover {
+    background-color: transparent;
+    color: #21075c;
+}
+
+#navbar button
+{
+    background: transparent;
+    border-style: hidden;
+    color: white;
+    margin-right:2vw !important;
+    border-style: none;
+}
+
+#navbar button:hover
+{
+    background-color: transparent;
+    color: #21075c;
+}
+
+#navbar button:focus
+{
+    outline:0 !important;
+}
+
+#navbar .active
+{
+    color: #21075c!important;
+}
+/*********************************/
+
+#flow
+{
+    text-align: center;
+}
+
+/*navbarSelect*/
+
+#navbarSelect
+{
+    padding-left: 3vw;
+    padding-bottom: 2vw;
+    position: fixed;
+    background-color: transparent;
+    padding-right: 100vw;
+    z-index:2;
+    opacity:0;
+}
+
+#navbarSelect a
+{
+    color: white;
+    font-size: 4vw;
+    
+}
+
+#navbarSelect button
+{
+    border-style: hidden;
+    background: transparent;
+    color: white;
+    font-size:7vw;
+    margin-top: .5vh;
+    outline:0 ;
+}
+
+#navbarSelect #down button
+{
+    margin-left: -1.5vw;
+    border-style: hidden;
+    background: transparent;
+    color: white;
+    font-size:4vw;
+    margin-top: .5vh;
+    outline:0 ;
+}
+
+#navbarSelect #down a:hover,#navbarSelect button:hover,#navbarSelect #down .dropdown #flow a:hover
+{
+    color: #21075c !important;
+}
+
+/*model*/
+
+.modal
+{
+    display:block;
+    position: fixed;
+    z-index:1;
+    padding-top: 12vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    top:0;
+    width: 100%
+    height: 100%;
+    overflow: scroll!important;
+    background-color: rgba(0,0,0,0.4);
+    opacity:0;
+}
+
+.model-content
+{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop 
+{
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop 
+{
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close,c
+{
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus,c:hover,c:focus 
+{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header 
+{
+    padding: 2px 16px;
+    background-color: #24ad1f;
+    color: white;
+}
+
+.modal-body 
+{
+    padding: 2px 16px;
+}
+
+.modal-footer 
+{
+    padding: 2px 16px;
+    background-color: #24ad1f;
+    color: white;
+}
+
+#myBtn
+{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 40vw;
+    background-color: #5ae503;
+    width: 150px;
+    border-radius: 3vh;
+}
+
+.modal-body .container form input 
+{
+    margin-top: 3vh;
+    width: 60vw;
+    height: 32px;
+    border-style: solid;
+    outline: 0;
+    margin-left: 5vw;
+}
+
+#submit
+{
+    width: 100px;
+    border-radius: 2vh;
+    border-style: groove;
+    font-style: italic;
+}
+
+.link
+{
+    width: 50vw;
+    margin-left: 0vw;
+}
+
+textarea
+{
+    width: 50vw;
+    height: 100px;
+    border-color: #21075c;
+    border-style: solid;
+    border-width: .15vw;
+}
