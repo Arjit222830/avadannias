@@ -2,7 +2,7 @@
   "name": "first",
   "version": "1.0.0",
   "description": "",
-  "main": "n.js",
+  "main": "index.js",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
@@ -32,7 +32,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "jest --watchAll --verbose",
-    "start": "node n.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "8.9.1"

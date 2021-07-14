@@ -3,8 +3,8 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { Detail, validateDetail } = require("./detail");
-const { Update } = require("./update");
+const { Detail, validateDetail } = require("../model/detail");
+const { Update } = require("../model/update");
 
 router.post("/", async (req, res) => {
   const updates = await Update.find().sort("-date");
