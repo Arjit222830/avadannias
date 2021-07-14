@@ -19,15 +19,25 @@ const { Quiz } = require("./model/quiz");
 require("./logging")();
 require("./prod")(app);
 
+// mongoose.set("useUnifiedTopology", true);
+// mongoose.set("useNewUrlParser", true);
+// mongoose.set("useUnifiedTopology", true);
+// mongoose.set("useCreateIndex", true);
 mongoose
-  .connect(config.get("db"), { useNewUrlParser: true })
+  .connect(config.get("db"), {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+
   .then(() => console.log(`Connected to ${config.get("db")}...`))
   .catch((err) =>
     console.log(`Could not connect to ${config.get("db")}...`, err)
   );
 
-mongoose.set("useCreateIndex", true);
-mongoose.set("useFindAndModify", false);
+// mongoose.set("useCreateIndex", true);
+// mongoose.set("useFindAndModify", false);
 
 app.use(express.json());
 
