@@ -19,10 +19,6 @@ const { Quiz } = require("./model/quiz");
 require("./logging")();
 require("./prod")(app);
 
-// mongoose.set("useUnifiedTopology", true);
-// mongoose.set("useNewUrlParser", true);
-// mongoose.set("useUnifiedTopology", true);
-// mongoose.set("useCreateIndex", true);
 mongoose
   .connect(config.get("db"), {
     useNewUrlParser: true,
@@ -36,53 +32,57 @@ mongoose
     console.log(`Could not connect to ${config.get("db")}...`, err)
   );
 
-// mongoose.set("useCreateIndex", true);
-// mongoose.set("useFindAndModify", false);
-
 app.use(express.json());
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use("/", auth);
 app.use("/admin", admin);
 app.use("/update", updating);
 app.use("/quiz", quizzes);
 
 app.set("view engine", "pug");
+app.set("view engine", "ejs");
 
 app.get("/", async function (req, res) {
   const updates = await Update.find().sort("-date");
-  res.status(200).render("first", { updates: updates });
+  res.status(200).render("first.pug", { updates: updates });
+});
+
+app.get("/test", async function (req, res) {
+  const updates = await Update.find().sort("-date");
+  res.status(200).render("first.ejs", { updates: updates });
+
 });
 
 app.get("/quiz", async function (req, res) {
   const quizzes = await Quiz.find();
-  res.status(200).render("quiz", { quizzes: quizzes });
+  res.status(200).render("quiz.pug", { quizzes: quizzes });
 });
 
 app.get("/first", async function (req, res) {
   const updates = await Update.find().sort("-date");
-  res.status(200).render("first", { updates: updates });
+  res.status(200).render("first.pug", { updates: updates });
 });
 
 app.get("/about", async function (req, res) {
-  res.sendFile("./public/about.html", { root: __dirname });
+  res.render("about.ejs");
 });
 
 app.get("/gallery", async function (req, res) {
-  res.sendFile("./public/gallery.html", { root: __dirname });
+  res.render("gallery.ejs");
 });
 
 app.get("/admission", async function (req, res) {
-  res.sendFile("./public/admission.html", { root: __dirname });
+  res.render("admission.ejs");
 });
 
 app.get("/facilities", async function (req, res) {
-  res.sendFile("./public/facilities.html", { root: __dirname });
+  res.render("facilities.ejs");
 });
 
 app.get("/syllabus", async function (req, res) {
-  res.sendFile("./public/syllabus.html", { root: __dirname });
+  res.render("syllabus.ejs");
 });
 
 app.get(

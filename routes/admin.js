@@ -14,15 +14,34 @@ router.get("/", async function (req, res) {
   res.sendFile("./public/admin.html", { root: __dirname });
 });
 
+router.get("/test", async function (req, res) {
+  res.render("admin.ejs" );
+});
+
 router.get(
-  "/6MayMMExW08NiAq92aMWKSNjWANjsxzhnjaskdhoijwasmx",
+  "/arjit",
   async function (req, res) {
     const details = await Detail.find().sort("-date");
     const updates = await Update.find().sort("date");
     const quizzes = await Quiz.find();
 
-    res.render("index", {
+    res.render("index.pug", {
       variable: details,
+      updates: updates,
+      quizzes: quizzes,
+    });
+  }
+);
+
+router.get(
+  "/info",
+  async function (req, res) {
+    const details = await Detail.find().sort("-date");
+    const updates = await Update.find().sort("date");
+    const quizzes = await Quiz.find();
+
+    res.render("adminInfo.ejs", {
+      details: details,
       updates: updates,
       quizzes: quizzes,
     });

@@ -25,8 +25,8 @@ router.post("/", async (req, res) => {
   });
 });
 
-router.delete("/", async (req, res) => {
-  const remove = await Update.findByIdAndRemove(req.body.id);
+router.post("/delete/:id", async (req, res) => {
+  const remove = await Update.findByIdAndRemove(req.params.id);
   if (!remove) return res.status(404).send("Given ID was not found"); //404 is error not found
 
   res.send({

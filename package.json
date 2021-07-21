@@ -32,7 +32,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "jest --watchAll --verbose",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "8.9.1"

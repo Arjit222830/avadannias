@@ -1,0 +1,114 @@
+<%- include('header.ejs') %> 
+
+<body>
+        
+    <div class="wrapper">
+      
+        <div class="background">
+            
+            <div id="navbar">            
+                <a id="home" href="/first"><strong><i class="fa fa-home" style="font-size:4.5vh"></i></strong></a>
+                <a href="/about"><strong>About Us</strong></a>
+                <a class="active" href="#"><strong>Facilities</strong></a>
+                <a href="/gallery"><strong>Gallery</strong></a>
+                <a  href="/admission"><strong>Admission</strong></a>                  
+                <a href="#home"><strong>Syllabus</strong></a>
+                <a href="https://www.google.com/maps/dir//Avadànn+IAS+Academy+%28premier+institute+for+civil+services+%29/data=!4m8!4m7!1m0!1m5!1m1!1s0x390929c9981d9f47:0x586eea411e071fb2!2m2!1d78.0524829!2d30.327303899999997" target="_blank"><strong>Direction</strong></a>
+                <a href="https://www.facebook.com/Avadannias/?ref=br_rs" target="_blank"><i class="fa fa-facebook-square" style="font-size:24px;"></i></a>
+                
+            </div>
+            
+            <div id="navbarSelect">
+                <button   data-toggle="collapse" data-target="#down"><i class="fa fa-bars bar"></i></button>
+                <div id="down" class="collapse">
+                    <a href="/first"><strong>Home</strong></a><br>
+                    <a href="/about"><strong>About Us</strong></a><br>
+                    <a class="active" href="#"><strong>Facilities</strong></a>
+                    <a href="/gallery"><br><strong>Gallery</strong></a><br>
+                    <a  href="/admission"><strong>Admission</strong></a><br>                  
+                    <a href="/syllabus"><strong>Syllabus</strong></a><br>
+                    <a id="direction" href="https://www.google.com/maps/dir//Avadànn+IAS+Academy+%28premier+institute+for+civil+services+%29/data=!4m8!4m7!1m0!1m5!1m1!1s0x390929c9981d9f47:0x586eea411e071fb2!2m2!1d78.0524829!2d30.327303899999997" target="_blank"><strong>Direction</strong></a>
+                    
+                </div> 
+            </div>
+            
+            <div class="container name text-center">
+                <strong><y>Avadànn</y></strong><br>
+                <div style= "margin-top:-4vh;margin-left: 12vw;">
+                    <y2 style= "font-size: 2.1vh">Road to Success</y2>
+                </div>
+                <strong><y1>(Premier IAS/PCS Institute)</y1></strong><br><br>
+                <strong><y1>104,EC Road.(Top Floor) Dehradun (U.K.)248001</y1></strong><br>
+                <strong><y1>Mob.: +91-9456360555</y1></strong>
+            </div>
+            
+                     
+            <!--<div class="text-center">
+                <input class="search" type="text" placeholder="                                Search..">
+                <i class="fa fa-search"></i>
+            </div>-->
+            
+        </div>
+        
+        
+        <button id="myBtn"><strong>Registration</strong></button>
+        
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container text-center">
+                        <h2><strong>Registeration</strong></h2>
+                    </div>
+                    <span class="close">&times;</span>
+                    
+                </div>
+            
+                <div class="modal-body">
+                    <div class="container" style="padding-top: 4vh;text-align:center">
+                        <form id="form">
+                            <label for="name" style="margin-right:4vw">Name</label>
+                            <input type="text" placeholder="Name" id="name" name="name"><br>
+                             <label for="email" style="margin-right:4vw">Email</label>
+                            <input type="email" placeholder="Email" id="email" name="email"><br>
+                             <label for="phone" style="margin-right:1vw">Contact No.</label>
+                            <input type="number" placeholder="Contact No." id="phone" name="phone"><br>
+                            <input id="submit" type="submit">
+                        </form>
+                    </div>
+         
+                </div>
+                
+                <div class="modal-footer">
+                    <h3><strong>@Avadann IAS Academy</strong></h3>
+                </div>
+            </div>
+            
+        </div>
+        <br><br>
+        
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <p style="color:#21075c">
+                        <strong>
+                            Hostel facility for girls available within the campus ! With safe and pleasant environment for students (girls) who are not from Dehradun .Hostel is appropriate and provide perfect environment for studies. And its also very economical and affordable.
+                        </strong>
+                    </p>
+                </li>
+                
+                <li>
+                    <p style="color:#21075c">
+                        <strong>
+                            Counselling is very important for students to move in a right direction. We ,thereby, provides counselling for 12th passed students. It will help students to clear their doubts about different career option they want to seek for.
+                        </strong>
+                    </p>  
+                </li>
+            </ul>
+        </div>
+        <br><br>
+    
+    </div>             
+</body>
+
+<%- include('footer.ejs') %>
