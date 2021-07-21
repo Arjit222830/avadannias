@@ -1,0 +1,268 @@
+<%- include('header.ejs') %> 
+
+
+    <style>
+
+        table,th,td
+        {
+            border: 2px solid black;
+            margin-left: 0vw; 
+            margin-bottom: 5vh;
+        }
+        
+        #home
+        {
+            margin-left: 6vw;
+            color: white;
+        }
+        
+        #myBtn:hover,#home:hover,#b:hover,#butt:hover,.cls:hover,.c:hover
+        {
+            color: #21075c;
+        }
+        
+        #myBtn,#b,#butt
+        {
+            border-style: none;
+            background-color: transparent;
+            color: white;
+            margin-left: 4vw;
+            outline: 0!important;
+        }
+        
+        #sub,#sb,#submit
+        {
+            width: 100px;
+            border-radius: 2vh;
+            border-style: groove;
+            font-style: italic;
+        }
+        
+        .btn
+        {
+            color:blue;
+        }
+        
+        *:focus
+        {
+            outline:none!important;
+        }
+        
+    </style>
+           
+    </head> 
+    
+    <body>
+        
+        <div class="background">
+            
+            <a id="home" style="padding-right: 0 vw!important" href="/"><strong><i class="fa fa-home" style="font-size:4.5vh"></i></strong></a>
+            <button id="myBtn"><strong>AddUpdate</strong></button>
+            <div id="myModal" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Add Update</strong></h2>
+                        </div>
+                        <span class="close">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form1">
+                                <textarea type="text" placeholder="Write your update" id="text" name="text"></textarea><br>
+                                <label for="link" style="margin-top:1vw;margin-bottom:-1.5vw">AddLink</label><br>
+                                <input id="link" type="text" placeholder="Type Link if exists" name="link" value="No_Link"><br>
+                                <input id="submit" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <button id="b"><strong>UpdateAdmin</strong></button>
+            <div id="m" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Update Admin Information</strong></h2>
+                        </div>
+                        <span class="c">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form2">
+                                <label for="name" style="margin-right:7.2vw">Name</label>
+                                <input type="text" placeholder="Name" id="name" name="name"><br>
+                                 <label for="password" style="margin-right:5.4vw">Password</label>
+                                <input type="password" placeholder="password" id="password" name="password"><br>
+                                 <label for="confirmPassword" style="margin-right:1vw">Confirm Password</label>
+                                <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword"><br>
+                                <input id="sub" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <button id="butt"><strong>AddQuestion</strong></button>
+            <div id="myMod" class="modal">
+                
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="container text-center">
+                            <h2><strong>Add Question</strong></h2>
+                        </div>
+                        <span class="cls">&times;</span>
+                        
+                    </div>
+                
+                    <div class="modal-body">
+                        <div class="container" style="padding-top: 4vh;text-align:center">
+                            <form id="form3">
+                                <label for="question" style="margin-right:1.5vw">Question</label>
+                                <input type="text" placeholder="Question" id="question" name="question"><br>
+                                <label for="A" style="margin-right:5.4vw">A</label>
+                                <input type="text" placeholder="Option A" id="A" name="A"><br>
+                                 <label for="B" style="margin-right:5.4vw">B</label>
+                                <input type="text" placeholder="Option B" id="B" name="B"><br>
+                                 <label for="C" style="margin-right:5.4vw">C</label>
+                                <input type="text" placeholder="Option C" id="C" name="C"><br>
+                                 <label for="D" style="margin-right:5.4vw">D</label>
+                                <input type="text" placeholder="Option D" id="D" name="D"><br>
+                                <label for="correctOption" style="margin-right:-1.5vw">Correct Option</label>
+                                <input type="text" placeholder="Type A,B,C or D" id="correctOption" name="correctOption"><br>
+                                <input id="sb" type="submit">
+                            </form>
+                        </div>
+             
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <h3><strong>@Avadann IAS Academy</strong></h3>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="container name text-center" style="margin-top: -8.3vh">
+                <strong><y>Avadànn</y></strong><br>
+                <div style= "margin-top:-4vh;margin-left: 12vw;">
+                    <y2 style= "font-size: 2.1vh">Road to Success</y2>
+                </div>
+                <strong><y1>(Premier IAS/PCS Institute)</y1></strong><br><br>
+                <strong><y1>104,EC Road.(Top Floor) Dehradun (U.K.)248001</y1></strong><br>
+                <strong><y1>Mob.: +91-9456360555</y1></strong>
+            </div>
+                
+        </div>
+
+    <div class=" container text-center mt-0">
+        <h1>Students Details</h1>
+
+    <div class="table-responsive-sm ml-1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        
+
+    </div>
+
+
+    <div class=" container text-center mt-0">
+        <h1>Updates</h1>
+
+    <div class="table-responsive-sm ml-1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Updates</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(let i=0;i<updates.length;i++) { %>
+                    <tr>
+                        <th scope="row"><%- (i+1) %> </th>
+                        <td><%- updates[i].text %> </td>
+                        <td><%- updates[i].date.toDateString() %></td>
+                        <td>
+                            <i class="fa fa-trash" aria-hidden="true" data-toggle="modal" data-target="#exampleModal<%- i %>"></i>
+                        </td>
+                    </tr>
+                    <%- include('deleteModal.ejs',{link: `/admin/delete/${updates[i]._id}`, Sno: i }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+        
+
+    </div>
+    <div class=" container text-center mt-0">
+        <h1>Questions</h1>
+
+    <div class="table-responsive-sm ml-1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col-sm-1">S.No</th>
+                    <th scope="col">Questions</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        
+
+    </div>
+        
+    </body>
+    
+<%- include('footer.ejs') %>
+    

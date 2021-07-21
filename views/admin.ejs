@@ -1,0 +1,84 @@
+<%- include('header.ejs')  %> 
+
+<style>
+    input
+    {
+        width: 150px;
+        border-color: #21075c;
+        margin-bottom: 5vh;
+    }
+    
+    button
+    {
+        border-color: #21075c;
+        margin-bottom: 5vh;  
+    }
+    
+    a
+    {
+        margin-left: 6vw;
+        color: white;
+    }
+    
+    #mybtn:hover,a:hover
+    {
+        color: #21075c;
+    }
+    
+    #myBtn
+    {
+        border-style: none;
+        background-color: transparent;
+        color: white;
+        margin-left: 5vw;
+        outline: 0;
+    }
+    
+</style>
+
+
+<body>
+        
+    <div class="background">
+        
+        <a id="home" href="./"><strong><i class="fa fa-home" style="font-size:4.5vh"></i></strong></a>
+        
+        <div class="container name text-center" style="margin-top: -4.3vh;">
+            <strong><y>Avadànn</y></strong><br>
+            <div style= "margin-top:-4vh;margin-left: 12vw;">
+                <y2 style= "font-size: 2.1vh">Road to Success</y2>
+            </div>
+            <strong><y1>(Premier IAS/PCS Institute)</y1></strong><br><br>
+            <strong><y1>104,EC Road.(Top Floor) Dehradun (U.K.)248001</y1></strong><br>
+            <strong><y1>Mob.: +91-9456360555</y1></strong>
+        </div>
+        
+    </div>
+    <div class="container text-center">
+        <h1 style="color:#21075c;margin-top: 8vh;margin-bottom: 6vh">Login as Administrator</h1>
+        <form id="form3">
+            <div class="row">
+                <div class="col-5 text-right">
+                    <label for="name">name</label>
+                </div>
+                <div class="col-sm-2 ">
+                    <input id="name" type="text" name="name" >
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-5 text-right">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+            
+            <button type="submit">Log in</button>
+        </form>  
+    </div>
+    
+</body>
+
+<%- include('footer.ejs') %>

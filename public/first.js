@@ -1,3 +1,10 @@
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+
+
 var navbar = document.getElementById('navbar');
 var navbarSelect = document.getElementById('navbarSelect');
 var demo = document.getElementById('demo');
@@ -37,6 +44,8 @@ window.onclick = function(event) {
 }
 
 var x,vh;
+
+
 
 resize();
 
