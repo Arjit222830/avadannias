@@ -4,7 +4,8 @@ const Joi = require("joi");
 var fs = require("fs");
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const config = require("config");
 const path = require("path");
 const middleware = require("./middleware/middleware");
@@ -19,6 +20,13 @@ const { Quiz } = require("./model/quiz");
 require("./logging")();
 require("./prod")(app);
 
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors());
+
+
+
 mongoose
   .connect(config.get("db"), {
     useNewUrlParser: true,
@@ -32,7 +40,7 @@ mongoose
     console.log(`Could not connect to ${config.get("db")}...`, err)
   );
 
-app.use(express.json());
+
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));

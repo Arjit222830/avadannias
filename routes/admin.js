@@ -1,5 +1,6 @@
 const express = require("express");
 const config = require("config");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 const { Admin, validate } = require("../model/model");
 const middleware = require("../middleware/middleware");
@@ -9,61 +10,66 @@ const _ = require("lodash");
 const { Detail } = require("../model/detail");
 const { Update } = require("../model/update");
 const { Quiz } = require("../model/quiz");
+const cookieParser = require("cookie-parser");
+const verifyToken = require("../middleware/verifyToken");
 
 router.get("/", async function (req, res) {
   res.sendFile("./public/admin.html", { root: __dirname });
 });
 
 router.get("/test", async function (req, res) {
-  res.render("admin.ejs" );
+  res.render("admin.ejs");
 });
 
-router.get(
-  "/arjit",
-  async function (req, res) {
-    const details = await Detail.find().sort("-date");
-    const updates = await Update.find().sort("date");
-    const quizzes = await Quiz.find();
+router.get("/arjit", async function (req, res) {
+  const details = await Detail.find().sort("-date");
+  const updates = await Update.find().sort("date");
+  const quizzes = await Quiz.find();
 
-    res.render("index.pug", {
-      variable: details,
-      updates: updates,
-      quizzes: quizzes,
-    });
-  }
-);
+  res.render("index.pug", {
+    variable: details,
+    updates: updates,
+    quizzes: quizzes,
+  });
+});
 
-router.get(
-  "/info",
-  async function (req, res) {
-    const details = await Detail.find().sort("-date");
-    const updates = await Update.find().sort("date");
-    const quizzes = await Quiz.find();
+//*yaha verifyToken use krna hai
+router.get("/info", verifyToken, async function (req, res) {
+  const details = await Detail.find().sort("-date");
+  const updates = await Update.find().sort("date");
+  const quizzes = await Quiz.find();
 
-    res.render("adminInfo.ejs", {
-      details: details,
-      updates: updates,
-      quizzes: quizzes,
-    });
-  }
-);
+  res.render("adminInfo.ejs", {
+    details: details,
+    updates: updates,
+    quizzes: quizzes,
+  });
+});
+//!cookie parser use krna h ispr
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body); //result.error(joi package)
   if (error) return res.status(400).send(error.details[0].message);
+  console.log(req.body.name);
+  console.log(config.get("secret"));
+  console.log(config.get("name"));
 
-  let user = await Admin.findOne({ name: req.body.name });
+  if (config.get("name") !== req.body.name)
+    return res.status(400).send("Invalid Username");
 
-  if (!user) return res.status(400).send("Invalid Username");
+  if (config.get("password") !== req.body.password)
+    return res.status(400).send("Invalid Password");
 
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
+  const token = jwt.sign(
+    { name: req.body.name, password: req.body.password },
+    config.get("secret")
+  );
 
-  if (!validPassword) return res.status(400).send("Invalid Password");
-
-  res.send({
-    link: "admin/6MayMMExW08NiAq92aMWKSNjWANjsxzhnjaskdhoijwasmx",
-    message: "Successfully Logged in",
+  res.cookie("name", token, {
+    expires: new Date(Date.now() + 24 * 60 * 60 * 100),
+    httpOnly: false,
   });
+  res.redirect("/admin/info");
 });
 
 router.put("/", async (req, res) => {

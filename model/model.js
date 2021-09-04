@@ -12,7 +12,9 @@ const AdminSchema=new mongoose.Schema({
         type: String,
         required: true
     },
-    isAdmin: Boolean
+    token:{
+        type:String
+    }
 });
 
 const Admin= mongoose.model('admins', AdminSchema);

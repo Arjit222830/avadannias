@@ -1,6 +1,7 @@
 {
     "db":"avadaan_db",
-    "ID":"ID",
-    "jwt": "jwt"
+    "jwt": "jwt",
+    "name":"name",
+    "password":"password",
+    "secret":"secret"
 }
-//mongodb://avadaan:Arjit222830@ds133438.mlab.com:33438/heroku_lb8wnh5h

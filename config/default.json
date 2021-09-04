@@ -1,5 +1,7 @@
 {
     "db": "mongodb://localhost/first",
-    "ID": "5d064401f1a7191248eb6d3e",
-    "jwt": "Arjit222830@"
+    "jwt": "Arjit222830@", 
+    "name": "arjit",
+    "password": "freewolf",
+    "secret":"abrakadabra"
 }
