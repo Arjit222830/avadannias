@@ -33,7 +33,7 @@ router.get("/arjit", async function (req, res) {
   });
 });
 
-//*yaha verifyToken use krna hai
+// * Token verifier
 router.get("/info", verifyToken, async function (req, res) {
   const details = await Detail.find().sort("-date");
   const updates = await Update.find().sort("date");
@@ -45,7 +45,7 @@ router.get("/info", verifyToken, async function (req, res) {
     quizzes: quizzes,
   });
 });
-//!cookie parser use krna h ispr
+
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body); //result.error(joi package)

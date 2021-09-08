@@ -7,10 +7,11 @@ const Update= mongoose.model('updates', new mongoose.Schema({
         required: true
     },
     
-    link:{
-        type: String,
-        required: true
-    },
+    file:[{
+        data: Buffer,
+        contentType: String
+    }],
+
     
     date: {
         type: Date,
@@ -22,7 +23,7 @@ const Update= mongoose.model('updates', new mongoose.Schema({
 function validateUpdate(update){    
         const schema= {
         text: Joi.string().min(3).max(10000).required(),
-        link: Joi.string().min(0).max(300).required()
+        file: Joi.string().min(0).max(300).required()
     };
     return Joi.validate(update, schema);
 }
